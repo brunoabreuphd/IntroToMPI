@@ -23,6 +23,13 @@
  *          the software and its usage.
  ***/
 
+/****
+ ***    This is a solution to the Hello World exercise.
+ ***    I recommend you do not read this file any further
+ ***    unless you are sure you checked all the hints and
+ ***    tried your best to code it yourself.
+ ****/
+
 #include <iostream>
 #include <mpi.h>
 
