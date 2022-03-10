@@ -160,7 +160,7 @@ int main()
             if (myrank == 0)
             {
                 mse.push_back(worldrss / n);
-                cout << "(a,b) = (" << a[i] << "," << b[j] << ")      RSS = " << worldrss / n << endl;
+                cout << "(a,b) = (" << a[i] << "," << b[j] << ")      MSE = " << worldrss / n << endl;
             }
         }
     }
