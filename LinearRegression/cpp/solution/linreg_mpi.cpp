@@ -38,7 +38,7 @@ int main()
     vector<double> a, b;       // parameters in each direction
 
     // target straight line
-    int n = 1 << 27;           // number of "data" points
+    int n = 1 << 20;           // number of "data" points
     vector<double> x;          // control variable
     double dx;                 // control variable spacing
     vector<double> y;          // response variable
@@ -143,8 +143,8 @@ int main()
                 bs = b[j];
             }
             // and broadcasts it to all others
-            mpierr = MPI_Bcast(&as, 1, MPI_DOUBLE, myrank, MPI_COMM_WORLD);
-            mpierr = MPI_Bcast(&bs, 1, MPI_DOUBLE, myrank, MPI_COMM_WORLD);
+            mpierr = MPI_Bcast(&as, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+            mpierr = MPI_Bcast(&bs, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
             // Now each PE calculates its RSS
             rss = 0.0;
