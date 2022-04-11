@@ -42,7 +42,23 @@ cd /expanse/lustre/projects/nsa108/<YourXSEDEUsername>
 Now simply *git clone* this repository:
 
 ```
-git clone https://github.com/babreu-ncsa/IntroToOpenMP.git
+git clone https://github.com/babreu-ncsa/IntroToMPI.git
 ```
 
 You should be ready to go now! If you know how to get around with *git*, you can alternatively fork this repo and clone it from your account.
+
+
+## Recommended usage
+The main exercise presents an application that performs a Linear Regression through simple grid search. It is intended to be interactive: I really think it is important for you to try to insert your own MPI calls, compile and run the code before looking into the hints, and use the solution as your last resource. The way you approach this is totally flexible and you should do what you feel comfortable with. Below is my recommendation:
+
+1. Take a look at the serial code and make sure you understand what it is doing. I inserted many comments that you may find useful.
+2. Try to identify how you are going to perform domain decomposition. What will each process be doing? You may be able to go much beyond what I've done, so don't be shy.
+3. Use the **/yourwork** area to write your parallelized version. 
+4. Once you are done and are sure your code behaves as expected, check out one possible solution that I implemented in the **/solution** folder. You can also use this a last resource after you exhaust your attempts to parallelize the code.
+5. Have a different solution? I want to know about it! Open a GitHub issue here and describe it! I will be happy to add that to this repo.
+
+### yourwork space
+If you are working on this from a remote server, I recommend cloning the entire repo and then using the **/yourwork** folders to work on the exercises. You can have that file open in your terminal using a text editor (vi, nano, emacs) and, if you want to check on the hints (or the solution), you can use your browser and look at the files on GitHub, as opposed to have yet another ssh session running (or even worse, having to close and open files every time).
+
+### Makefile
+The workspace has a **Makefile** that takes the source code, which is named *ExerciseName_yourwork.<cpp/f90>* and compiles it into an executable *ExerciseName_yourwork.exe* (you will also get an object file that can be ignored). This Makefile already includes the MPI compiler call.
