@@ -5,7 +5,7 @@
 !! National Center for Supercomputing Applications (NCSA)
 !!  
 !! Creation Date: Monday, 11th April 2022, 1:52:25 pm
-!! Last Modified: Monday, 11th April 2022, 3:16:32 pm
+!! Last Modified: Monday, 11th April 2022, 3:21:45 pm
 !!  
 !! Copyright (c) 2022, Bruno R. de Abreu, National Center for Supercomputing Applications.
 !! All rights reserved.
@@ -23,7 +23,7 @@
 !!          the software and its usage.
 !!!!
 
-program linreg_serial
+program linreg_mpi
     use mpi
     implicit none
     ! parameter map variables
@@ -188,4 +188,4 @@ program linreg_serial
     deallocate(x, y, seed)
     call MPI_FINALIZE(mpierr)
 
-end program linreg_serial
+end program linreg_mpi
