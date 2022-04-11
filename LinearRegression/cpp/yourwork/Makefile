@@ -4,10 +4,10 @@ CC=g++
 # Compilation flags
 CFLAGS=
 
-linreg_serial.exe: linreg_serial.o
+linreg_yourwork.exe: linreg_yourwork.o
 	$(CC) -o $@ $^
 
-linreg_serial.o: linreg_serial.cpp
+linreg_yourwork.o: linreg_yourwork.cpp
 	$(CC) ${CFLAGS} -c $<
 
 clean:
