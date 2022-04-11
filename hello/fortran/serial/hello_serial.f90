@@ -5,7 +5,7 @@
 !! National Center for Supercomputing Applications (NCSA)
 !!  
 !! Creation Date: Monday, 11th April 2022, 10:15:37 am
-!! Last Modified: Monday, 11th April 2022, 10:18:02 am
+!! Last Modified: Monday, 11th April 2022, 10:27:06 am
 !!  
 !! Copyright (c) 2022, Bruno R. de Abreu, National Center for Supercomputing Applications.
 !! All rights reserved.
@@ -25,7 +25,7 @@
 
 program hello_serial
     implicit none
-    integer my_rank
+    integer :: my_rank
 
     ! get my rank -- serial code has just one process
     my_rank = 0
