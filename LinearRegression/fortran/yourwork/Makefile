@@ -1,13 +1,13 @@
-# MPI Fortran Compiler 
+# Fortran MPI Compiler 
 FC=mpifort
 
 # Compilation flags
 FFLAGS=
 
-hello_yourwork.exe: hello_yourwork.o
+linreg_yourwork.exe: linreg_yourwork.o
 	$(FC) -o $@ $^
 
-hello_yourwork.o: hello_yourwork.f90
+linreg_yourwork.o: linreg_yourwork.f90
 	$(FC) ${FFLAGS} -c $<
 
 clean:

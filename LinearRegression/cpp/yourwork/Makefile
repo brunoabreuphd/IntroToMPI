@@ -1,4 +1,4 @@
-# C++ Compiler (GNU here)
+# MPI C++ Compiler
 CC=mpic++
 
 # Compilation flags
