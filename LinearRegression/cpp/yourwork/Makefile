@@ -1,5 +1,5 @@
 # C++ Compiler (GNU here)
-CC=g++
+CC=mpic++
 
 # Compilation flags
 CFLAGS=

@@ -1,5 +1,5 @@
 # Fortran Compiler (GNU here)
-FC=gfortran
+FC=mpifort
 
 # Compilation flags
 FFLAGS=
