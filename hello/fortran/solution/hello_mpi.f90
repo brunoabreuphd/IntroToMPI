@@ -5,7 +5,7 @@
 !! National Center for Supercomputing Applications (NCSA)
 !!  
 !! Creation Date: Monday, 11th April 2022, 10:22:32 am
-!! Last Modified: Monday, 11th April 2022, 10:29:57 am
+!! Last Modified: Monday, 11th April 2022, 10:42:36 am
 !!  
 !! Copyright (c) 2022, Bruno R. de Abreu, National Center for Supercomputing Applications.
 !! All rights reserved.
@@ -30,7 +30,7 @@ program hello_mpi
     integer :: mpierr      ! this will hold error codes to MPI calls
 
     ! start MPI environment
-    call MPI_Init(mpierr)
+    call MPI_INIT(mpierr)
 
     ! get rank of each process
     call MPI_COMM_RANK(MPI_COMM_WORLD, my_rank, mpierr)
@@ -39,6 +39,6 @@ program hello_mpi
     write(*,*) "Hello from PE", my_rank
 
     ! close MPI environment
-    call MPI_Finalize(mpierr)
+    call MPI_FINALIZE(mpierr)
 
 end program hello_mpi
