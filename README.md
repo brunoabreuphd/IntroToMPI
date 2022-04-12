@@ -73,9 +73,19 @@ The compilation itself is exactly the same as if you were using your traditional
 mpic++ hello_mpi.cpp -o hello_mpi.exe
 ```
 
-
 ### Makefile
 The workspace has a **Makefile** that takes the source code, which is named *ExerciseName_yourwork.<cpp/f90>* and compiles it into an executable *ExerciseName_yourwork.exe* (you will also get an object file that can be ignored). This Makefile already includes the MPI compiler call. However, on Expanse you still need to load the OpenMPI module (see above).
+
+
+## Running MPI applications
+Once the code is compiled, we want to run it in parallel using several processes. To make that happen, we need to use an MPI wrapper that will make the binary generated in the compilation step be replicated to as many processes as we wish. Again, we will be using [OpenMPI](https://www.open-mpi.org/), and the wrapper is named `mpirun`. For instance, to run the Hello World application with 16 processes, you would do:
+
+```
+mpirun -n 16 ./hello_mpi.exe
+```
+
+Notice that, again, to use `mpirun` on Expanse, the OpenMPI module needs to be loaded.
+
 
 ## Comments and Hints syntax
 Comments that are sprinkled over the code files start with **//** for C++ and **!** for Fortran. Hints start with a **// !! HINT#** and finish with **!!** for C++, start with **! ## HINT#** and finish with **##** for Fortran. 
