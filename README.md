@@ -67,7 +67,7 @@ There are several MPI distributions implemented by open-source communities and v
 module load openmpi
 ```
 
-The compilation itself is exactly the same as if you are using your traditional compiler (e.g. GCC), with no additional flags required. For example, to compile the Hello World code, one possibility is:
+The compilation itself is exactly the same as if you were using your traditional compiler (e.g. GCC), with no additional flags required. For example, to compile the Hello World code, one possibility is:
 
 ```
 mpic++ hello_mpi.cpp -o hello_mpi.exe
