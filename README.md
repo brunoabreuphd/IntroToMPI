@@ -64,7 +64,7 @@ If you are working on this from a remote server, I recommend cloning the entire 
 There are several MPI distributions implemented by open-source communities and vendors. Generally speaking, there shouldn't be much difference between them. If you are really looking to squeezing every single drop of performance out, it may be interesting to try different ones. Here, we eill be using [OpenMPI](https://www.open-mpi.org/) to compile our codes. The MPI-C++ compiler is `mpic++`, and the MPI-Fortran compiler is `mpifort`. On Expanse, to use them, we need to load a module:
 
 ```
-module load openmpi
+module load openmpi/gcc/64
 ```
 
 The compilation itself is exactly the same as if you were using your traditional compiler (e.g. GCC), with no additional flags required. For example, to compile the Hello World code, one possibility is:
