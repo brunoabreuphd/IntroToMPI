@@ -25,14 +25,17 @@
 
 program linreg_mpi
     use mpi
+    use, intrinsic :: iso_fortran_env
     implicit none
+
     ! parameter map variables
     integer, parameter :: na=10, nb=10  ! number of points for each parameter in grid space
     double precision, parameter :: da=0.1d0, db=0.1d0   ! grid spacing in each direction
     double precision, dimension(:), allocatable :: a, b ! parameters in each direction
 
     ! target straight line variables
-    integer, parameter :: n = 2**27   ! number of data points
+    integer, parameter :: order = 32      ! total number of data points is 2^order
+    integer(kind=int64) :: n = 2**order   ! actual number of data points
     double precision, dimension(:), allocatable :: x    ! control variable
     double precision :: dx  ! control variable spacing
     double precision, dimension(:), allocatable :: y    ! response variable
@@ -69,6 +72,7 @@ program linreg_mpi
     integer :: leftover     ! in case n is not divisble by number of PEs
     integer :: mystart, mystop  ! each PE start and stop iteration values
     double precision :: worldrss    ! the reduction-combined RSS
+
 
     ! Start MPI
     call MPI_INIT(mpierr)
