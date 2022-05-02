@@ -23,6 +23,7 @@
  *          the software and its usage.
  ***/
 
+// 1. Include MPI header
 #include <iostream>
 #include <mpi.h>
 
@@ -30,17 +31,19 @@ using namespace std;
 
 int main()
 {
+    // 2. Declare variables
     int my_id;         // id of each PE
     int mpierr;        // MPI return codes
     MPI_Status status; // status about received messages
     double A;          // variable whose content is going to be sent
 
-    // start MPI env
+    // 3. Start MPI environment
     mpierr = MPI_Init(NULL, NULL);
 
-    // get PEs IDs
+    // 4. Get the ID of each PE
     mpierr = MPI_Comm_rank(MPI_COMM_WORLD, &my_id);
 
+    // 5. Perform P2P communication
     // set value of A in PE 0, send it to PE 1
     if (my_id == 0)
     {
@@ -56,7 +59,7 @@ int main()
         cout << "This is PE " << my_id << " again. I just received a message from PE 0. The value that I have for A now is " << A << endl;
     }
 
-    // finalize MPI env
+    // 6. Close MPI communications
     mpierr = MPI_Finalize();
 
     // goodbye
