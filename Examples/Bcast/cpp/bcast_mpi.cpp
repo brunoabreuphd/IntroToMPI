@@ -61,8 +61,10 @@ int main()
 
     // 6. Use MPI_BCAST to reset the states to the one of PE 0
     mpierr = MPI_Bcast(&coinState, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
-    cout << "I'm PE " << my_id << ". I received a broadcast from PE 0 and now my coin state is: " << coinState << endl;
-
+    if (my_id != 0)
+    {
+        cout << "I'm PE " << my_id << ". I received a broadcast from PE 0 and now my coin state is: " << coinState << endl;
+    }
     // 7. Close MPI environment
     mpierr = MPI_Finalize();
 
