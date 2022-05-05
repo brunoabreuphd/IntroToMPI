@@ -92,3 +92,9 @@ Notice that, again, to use `mpirun` on Expanse, the OpenMPI module needs to be l
 
 ## Comments and Hints syntax
 Comments that are sprinkled over the code files start with **//** for C++ and **!** for Fortran. Hints start with a **// !! HINT#** and finish with **!!** for C++, start with **! ## HINT#** and finish with **##** for Fortran. 
+
+# Examples
+Apart from [Exercises](./Exercises), this repository also has some [Examples](./Examples) of common MPI communication (point-to-point and collective) operations:
+- [MPI_SEND and MPI_RECV](./Examples/SendRecv)
+- [MPI_BCAST](./Examples/Bcast)
+- [MPI_REDUCE](./Examples/Reduce)
