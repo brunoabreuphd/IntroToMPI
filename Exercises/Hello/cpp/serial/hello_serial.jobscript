@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name="hello_serial"
+#SBATCH --output="hello_serial-%j.out"
+#SBATCH --partition=trial
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=7500M
+#SBATCH --account=RFST
+#SBATCH --export=ALL
+#SBATCH -t 00:05:00
+
+module load intel
+
+echo "Starting Hello serial" 
+./hello_serial.exe
+wait
+echo ""

@@ -1,5 +1,5 @@
-# MPI C++ Compiler
-CC=mpic++
+# MPI C++ Compiler (Intel)
+CC=mpiicc
 
 # Compilation flags
 CFLAGS=

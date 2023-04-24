@@ -1,5 +1,5 @@
-# C++ Compiler (GNU here)
-CC=g++
+# C++ Compiler (Intel)
+CC=icc
 
 # Compilation flags
 CFLAGS=
