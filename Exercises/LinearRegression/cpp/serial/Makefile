@@ -1,8 +1,8 @@
-# C++ Compiler (GNU here)
-CC=g++
+# C++ Compiler (Intel)
+CC=icc
 
 # Compilation flags
-CFLAGS=
+CFLAGS=-std=c++14
 
 linreg_serial.exe: linreg_serial.o
 	$(CC) -o $@ $^
