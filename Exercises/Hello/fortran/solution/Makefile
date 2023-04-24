@@ -1,5 +1,5 @@
-# MPI Fortran Compiler
-FC=mpifort
+# MPI Fortran Compiler (Intel)
+FC=mpiifort
 
 # Compilation flags
 FFLAGS=
