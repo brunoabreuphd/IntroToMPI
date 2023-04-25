@@ -12,7 +12,7 @@ int main()
     vector<double> a, b;       // parameters in each direction
 
     // target straight line
-    int n = 1 << 23;           // number of "data" points
+    int n = 1 << 27;           // number of "data" points
     vector<double> x;          // control variable
     double dx;                 // control variable spacing
     vector<double> y;          // response variable
