@@ -73,6 +73,18 @@ mpirun -n 16 ./hello_mpi.exe
 
 Notice that, again, to use `mpirun` on ICC, the Intel MPI module needs to be loaded.
 
+### Job scripts
+We need to submit the MPI workload to ICC's batch scheduler. In each folder, you will find one or several of them. For the /yourwork area, you can run your code using the scripts that follow the nomeclature `ExerciseName_ywN.jobscript`. Here, $N$ is the number of processes to be used. We recommend you can the script with 8 processes to test your solution. However, if you are ready to collect results and see how your solution scales, a job array script is avaliable. The ExerciseName_yw_array.jobscript file will test your solution with 1, 2, 4, 8, 16, and 32 processes. You just need to submit that script once. To submit a script, use the sbatch command:
+
+```
+sbatch <scriptName>.jobscript
+```
+
+To check on the status of your runs, you can use:
+```
+squeue -u $USER
+```
+
 
 ## Comments and Hints syntax
 Comments that are sprinkled over the code files start with **//** for C++ and **!** for Fortran. Hints start with a **// !! HINT#** and finish with **!!** for C++, start with **! ## HINT#** and finish with **##** for Fortran. 
