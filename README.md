@@ -18,6 +18,11 @@ You are now sitting on a login node on the Campus Cluster.
 
 
 ### Clone this branch of the repository to get the exercises files
+Load the `git` module using
+```
+module load git
+```
+and then clone this session's branch with
 
 ```
 git clone --branch uiuc-icc --single-branch https://github.com/babreu-ncsa/IntroToMPI.git
@@ -39,23 +44,24 @@ The main exercise presents an application that performs a Linear Regression thro
 If you are working on this from a remote server, I recommend cloning the entire repo and then using the **/yourwork** folders to work on the exercises. You can have that file open in your terminal using a text editor (vi, nano, emacs) and, if you want to check on the hints (or the solution), you can use your browser and look at the files on GitHub, as opposed to have yet another ssh session running (or even worse, having to close and open files every time).
 
 ## Compiling MPI code
-There are several MPI distributions implemented by open-source communities and vendors. Generally speaking, there shouldn't be much difference between them. If you are really looking to squeezing every single drop of performance out, it may be interesting to try different ones. Here, we eill be using [OpenMPI](https://www.open-mpi.org/) to compile our codes. The MPI-C++ compiler is `mpic++`, and the MPI-Fortran compiler is `mpifort`. On Expanse, to use them, we need to load a few modules:
+There are several MPI distributions implemented by open-source communities and by vendors. Generally speaking, there shouldn't be much difference between them. If you are really looking to squeezing every single drop of performance out, it may be interesting to try different ones. Here, we will be using the Intel MPI compiler to compile our codes. The Intel MPI-C++ compiler is `mpiicc`, and the Intel MPI-Fortran compiler is `mpiifort`. On ICC, to use them, we need to load the following module:
 
 ```
-module purge
-module load DefaultModules
-module load gcc
-module load openmpi
+module load intel/18.0
 ```
 
-The compilation itself is exactly the same as if you were using your traditional compiler (e.g. GCC), with no additional flags required. For example, to compile the Hello World code, one possibility is:
+The compilation itself is exactly the same as if you were using your traditional compiler. For the C++ codes, you will need enable C++14 with the `-std=c++14` flag. For example, to compile the Hello World code, one possibility is:
 
 ```
-mpic++ hello_mpi.cpp -o hello_mpi.exe
+mpiicc -std=c++14 hello_mpi.cpp -o hello_mpi.exe
+```
+or
+```
+mpiifort hello_mpi.cpp -o hello_mpi.exe
 ```
 
 ### Makefile
-The workspace has a **Makefile** that takes the source code, which is named *ExerciseName_yourwork.<cpp/f90>* and compiles it into an executable *ExerciseName_yourwork.exe* (you will also get an object file that can be ignored). This Makefile already includes the MPI compiler call. However, on Expanse you still need to load the OpenMPI module (see above).
+The workspace has a **Makefile** that takes the source code, which is named *ExerciseName_yourwork.<cpp/f90>* and compiles it into an executable *ExerciseName_yourwork.exe* (you will also get an object file that can be ignored). This Makefile already includes the MPI compiler call. However, you still need to load the Intel MPI module (see above).
 
 
 ## Running MPI applications
