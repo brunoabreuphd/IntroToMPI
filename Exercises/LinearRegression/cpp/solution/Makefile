@@ -1,8 +1,8 @@
-# MPI C++ Compiler
-CC=mpic++
+# MPI C++ Compiler (Intel)
+CC=mpiicc
 
 # Compilation flags
-CFLAGS=
+CFLAGS=-std=c++14
 
 linreg_mpi.exe: linreg_mpi.o
 	$(CC) -o $@ $^

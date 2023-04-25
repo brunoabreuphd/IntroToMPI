@@ -26,6 +26,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <sys/time.h>
 #include <mpi.h>
 
 using namespace std;
@@ -38,7 +39,7 @@ int main()
     vector<double> a, b;       // parameters in each direction
 
     // target straight line
-    int n = 1 << 27;           // number of "data" points
+    int n = 1 << 28;           // number of "data" points
     vector<double> x;          // control variable
     double dx;                 // control variable spacing
     vector<double> y;          // response variable
@@ -54,6 +55,9 @@ int main()
     double z;            // Box-Muller transform
     double pi;           // PI
     pi = 4.0 * atan(1.0);
+
+    // execution time
+    struct timeval start_time, stop_time, elapsed_time;
 
     // integer helpers
     int i, j, k; // loops
