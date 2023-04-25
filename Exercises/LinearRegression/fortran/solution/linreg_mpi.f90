@@ -32,7 +32,7 @@ program linreg_mpi
     double precision, dimension(:), allocatable :: a, b ! parameters in each direction
 
     ! target straight line variables
-    integer, parameter :: n = 2**27   ! number of data points
+    integer, parameter :: n = 2**28   ! number of data points
     double precision, dimension(:), allocatable :: x    ! control variable
     double precision :: dx  ! control variable spacing
     double precision, dimension(:), allocatable :: y    ! response variable
