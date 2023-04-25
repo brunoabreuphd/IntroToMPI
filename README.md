@@ -99,7 +99,7 @@ The MPI programming model requires you to redesign serial applications and perfo
 
 In contrast to previous exercises, the solution to this problem depends entirely on how you decide to perform domain decomposition. For that reason, no hints are provided. However, regardless of what you choose to do, it is likely that you will use the collective communication functions `MPI_Bcast` and `MPI_Reduce` to get the correct results. If you are unsure about how to use them, check on the [Examples](./Examples).
 
-You can use this suggest domain decomposition handout to help you conceptualize how to break down your problem.
+You can use this [suggest domain decomposition handout](https://docs.google.com/presentation/d/13skCf6Wf__cB0bbF1CIaZ_z1ZOQSDQ5KxKqCA9Q5XOo/edit?usp=sharing) to help you conceptualize how to break down your problem.
 
 # Examples
 Apart from [Exercises](./Exercises), this repository also has some [Examples](./Examples) of common MPI communication (point-to-point and collective) operations:
