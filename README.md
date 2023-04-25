@@ -65,13 +65,13 @@ The workspace has a **Makefile** that takes the source code, which is named *Exe
 
 
 ## Running MPI applications
-Once the code is compiled, we want to run it in parallel using several processes. To make that happen, we need to use an MPI wrapper that will make the binary generated in the compilation step be replicated to as many processes as we wish. Again, we will be using [OpenMPI](https://www.open-mpi.org/), and the wrapper is named `mpirun`. For instance, to run the Hello World application with 16 processes, you would do:
+Once the code is compiled, we want to run it in parallel using several processes. To make that happen, we need to use an MPI wrapper that will make the binary generated in the compilation step be replicated to as many processes as we wish. Again, we will be using the Intel MPI implementation, and the wrapper is named `mpirun`. For instance, to run the Hello World application with 16 processes, you would do:
 
 ```
 mpirun -n 16 ./hello_mpi.exe
 ```
 
-Notice that, again, to use `mpirun` on Expanse, the OpenMPI module needs to be loaded.
+Notice that, again, to use `mpirun` on ICC, the Intel MPI module needs to be loaded.
 
 
 ## Comments and Hints syntax
