@@ -89,6 +89,12 @@ squeue -u $USER
 ## Comments and Hints syntax
 Comments that are sprinkled over the code files start with **//** for C++ and **!** for Fortran. Hints start with a **// !! HINT#** and finish with **!!** for C++, start with **! ## HINT#** and finish with **##** for Fortran. 
 
+# Exercises
+
+## [Hello](./Exercises/Hello)
+The programming model for MPI is fundamentally different than shared memory parallel programming. Many copies of the same program are run concurrently, and MPI functions allow us to be specific about what we want each process to do. In this exercise, you will use the ubiquitous MPI functions `MPI_Init`, `MPI_Comm_rank`, and `MPI_Finalize` to make each process element print their ID.
+
+
 # Examples
 Apart from [Exercises](./Exercises), this repository also has some [Examples](./Examples) of common MPI communication (point-to-point and collective) operations:
 - [MPI_SEND and MPI_RECV](./Examples/SendRecv)
